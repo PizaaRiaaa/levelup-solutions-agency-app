@@ -27,7 +27,7 @@ export const Review = () => {
                                         <div className="flex items-center mt-4 space-x-4">
                                             <img src={image1} alt="" className="w-12 h-12 bg-center bg-cover rounded-full" />
                                             <div>
-                                                <p className="text-sm sm:text-lg font-semibold">Sam Smith</p>
+                                                <p className="text-sm sm:text-lg font-semibold">Neo Smith</p>
                                                 <p className="text-xs sm:text-lg dark:text-gray-600">Asus</p>
                                             </div>
                                             <MdVerified size={40} className="fill-green-500 ml-1 sm:ml-4" />
@@ -39,7 +39,7 @@ export const Review = () => {
                                         <div className="flex items-center mt-4 space-x-4">
                                             <img src={image2} alt="" className="w-12 h-12 bg-center bg-cover rounded-full" />
                                             <div>
-                                                <p className="text-sm sm:text-lg font-semibold">Benjamin Mitchell</p>
+                                                <p className="text-sm sm:text-lg font-semibold">Olivia Mitchell</p>
                                                 <p className="text-xs sm:text-lg dark:text-gray-600">Razer</p>
                                             </div>
                                             <MdVerified size={40} className="fill-green-500 ml-1 sm:ml-4" />
@@ -53,7 +53,7 @@ export const Review = () => {
                                         <div className="flex items-center mt-4 space-x-4">
                                             <img src={image3} alt="" className="w-12 h-12 bg-center bg-cover rounded-full" />
                                             <div>
-                                                <p className="text-sm sm:text-lg font-semibold">Olivia Johnson</p>
+                                                <p className="text-sm sm:text-lg font-semibold">Robert Johnson</p>
                                                 <p className="text-xs sm:text-lg dark:text-gray-600">Microsoft</p>
                                             </div>
                                             <MdVerified size={40} className="fill-green-500 ml-1 sm:ml-4" />
@@ -64,7 +64,7 @@ export const Review = () => {
                                         <div className="flex items-center mt-4 space-x-4">
                                             <img src={image4} alt="" className="w-12 h-12 bg-center bg-cover rounded-full" />
                                             <div>
-                                                <p className="text-sm sm:text-lg font-semibold">Sophia Davis</p>
+                                                <p className="text-sm sm:text-lg font-semibold">Michael Davis</p>
                                                 <p className="text-xs sm:text-lg dark:text-gray-600">Dell</p>
                                             </div>
                                             <MdVerified size={40} className="fill-green-500 ml-1 sm:ml-4" />
