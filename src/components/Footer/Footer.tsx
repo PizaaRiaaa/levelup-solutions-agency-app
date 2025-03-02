@@ -17,6 +17,19 @@ export const Footer = () => {
                         <FaTwitterSquare size={30} className="cursor-pointer" />
                     </div>
                 </div>
+                <div className="text-white sm:w-[900px] sm:ml-[18%] sm:mr-[12%] sm:pt-0">
+                    <div>
+                        <h1>Want tips & Tricks to optimize your Work flow?</h1>
+                        <p>Sign up to our newsletter and stay up to date.</p>
+                    </div>
+                    <div className="my-4">
+                        <div className="justify-center flex">
+                            <input className="placeholder:pl-4 flex mr-[-50px] h-10 sm:w-[50%] sm:h-[35px] mx-auto rounded-md text-black" />
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
             {/* footer top section end */}
             {/* footer bottom section with links */}
