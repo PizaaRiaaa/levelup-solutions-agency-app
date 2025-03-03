@@ -8,7 +8,7 @@ export const Navigation = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="max-w-screen overflow-x-hidden font-poppins">
+        <div className="max-w-screen h-fit bg-zinc-300 overflow-x-hidden font-poppins">
             <nav className="bg-gray-900 fixed px-2 sm:h-auto sm:w-full w-screen z-20 lef-0 right-0 top-0 border-b border-gray-400">
                 {/* desktop nav */}
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
@@ -64,9 +64,8 @@ export const Navigation = () => {
                 </div>
                 {/* desktop nav end */}
                 <div
-                    className={`transition-all duration-500 delay-300 ${
-                        open ? 'h-[19rem] opacity-100' : 'h-0 opacity-0'
-                    } overflow-hidden`}
+                    className={`transition-all duration-500 delay-300 ${open ? 'h-[19rem] opacity-100' : 'h-0 opacity-0'
+                        } overflow-hidden`}
                 >
                     <ul>
                         <li className="p-2 text-white hover:text-blue-400 hover:cursor-pointer">

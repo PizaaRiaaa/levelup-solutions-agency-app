@@ -8,13 +8,16 @@ import { Homepage } from '../components/Homepage/Homepage'
 import { About } from '../components/About/About'
 import { Services } from '../components/Services/Services'
 import { Contact } from '../components/Contact/Contact'
+import { NavigationWrapper } from '../components/NavigationWrapper/NavigationWrapper'
 
 const routes: RouteObject[] = [
     {
         path: '/',
         element: (
             <Suspense fallback={<span>loading...</span>}>
-                <Homepage />
+                <NavigationWrapper>
+                    <Homepage />
+                </NavigationWrapper>
             </Suspense>
         ),
     },
@@ -22,7 +25,9 @@ const routes: RouteObject[] = [
         path: '/about',
         element: (
             <Suspense fallback={<span>loading...</span>}>
-                <About />
+                <NavigationWrapper>
+                    <About />
+                </NavigationWrapper>
             </Suspense>
         ),
     },
@@ -30,7 +35,9 @@ const routes: RouteObject[] = [
         path: '/services',
         element: (
             <Suspense fallback={<span>loading...</span>}>
-                <Services />
+                <NavigationWrapper>
+                    <Services />
+                </NavigationWrapper>
             </Suspense>
         ),
     },
@@ -38,7 +45,9 @@ const routes: RouteObject[] = [
         path: '/contact',
         element: (
             <Suspense fallback={<span>loading...</span>}>
-                <Contact />
+                <NavigationWrapper>
+                    <Contact />
+                </NavigationWrapper>
             </Suspense>
         ),
     },
