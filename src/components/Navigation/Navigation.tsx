@@ -8,11 +8,11 @@ export const Navigation = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="max-w-screen h-fit bg-zinc-300 overflow-x-hidden font-poppins">
+        <div className="max-w-screen h-fit z-50 bg-zinc-300 overflow-x-hidden font-poppins">
             <nav className="bg-gray-900 fixed px-2 sm:h-auto sm:w-full w-screen z-20 lef-0 right-0 top-0 border-b border-gray-400">
                 {/* desktop nav */}
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:p-4 pb-2">
-                    <Link to="/about" className="flex items-center">
+                    <Link to="/about" className="flex flex-row gap-6 items-center">
                         <img
                             src={Icon}
                             alt="Icon"
@@ -41,7 +41,7 @@ export const Navigation = () => {
                         </ul>
                     </div>
 
-                    <div className="flex">
+                    <div className="flex text-sm">
                         <button
                             type="button"
                             className="bg-blue-600 px-2 py-2 text-white hidden sm:block rounded-xl mr-2 hover:bg-blue-500 hover:cursor-pointer"

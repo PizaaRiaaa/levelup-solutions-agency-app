@@ -28,7 +28,7 @@ export const Footer = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duratio: 0.5, delay: 0.25 }}
                         className="flex flex-col gap-2 text-center">
-                        <p className="text-xl sm:text-3xl text-center">Want tips & Tricks to optimize your Work flow?</p>
+                        <p className="text-xl sm:text-2xl text-center">Want tips & Tricks to optimize your Work flow?</p>
                         <p>Sign up to our newsletter and stay up to date.</p>
                     </motion.div>
                     <div className="my-4">

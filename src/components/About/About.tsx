@@ -1,9 +1,37 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import image1 from "../../assets/images/Team/team1.png"
 import image2 from "../../assets/images/Team/teamMember1.jpeg"
 import image3 from "../../assets/images/Team/team2.jpg"
+import { BiNavigation, BiMap, BiPhone, BiChevronDown } from "react-icons/bi";
+import { BsMailbox } from "react-icons/bs";
+import { CgLock } from "react-icons/cg";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const About = () => {
+    const [showDirections, setShowDirections] = useState(false)
+    const [activeTab, setActiveTab] = useState("main")
+
+    const locations = [
+        {
+            id: "main",
+            name: "Main Office",
+            address: "123 Main Street, Quezon City, Metro Manila",
+            phone: "+63 2 8123 4567",
+            email: "levelup@agency.solutions",
+            hours: "Monday - Friday: 9AM - 6PM",
+            coordinates: "14.6760, 121.0437",
+        },
+        {
+            id: "branch",
+            name: "Branch Office",
+            address: "456 Secondary Road, Quezon City, Metro Manila",
+            phone: "+63 2 8765 4321",
+            email: "branch@example.com",
+            hours: "Monday - Saturday: 10AM - 7PM",
+            coordinates: "14.6500, 121.0500",
+        },
+    ]
     return (
         <>
             <section className="font-poppins h-screen overflow-hidden pt-20Sarah pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
@@ -13,24 +41,57 @@ export const About = () => {
                             <div className="flex items-center -mx-3 sm:-mx-4">
                                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                                     <div className="py-3 sm:py-4 hover:scale-105 transition duration-150 delay-150">
-                                        <img src={image1}
+                                        <motion.img
+                                            variants={{
+                                                visible: { opacity: 1, y: 0 },
+                                                hidden: { opacity: 0, y: 10 }
+                                            }}
+                                            initial="hidden"
+                                            animate="visible"
+                                            transition={{
+                                                delay: 0.5,
+                                                transition: 0.25,
+                                            }}
+                                            src={image1}
                                             alt=""
                                             className="w-full rounded-2xl"
                                         />
                                     </div>
                                     <div className="py-3 sm:py-4">
-                                        <img src={image2}
+                                        <motion.img
+                                            variants={{
+                                                visible: { opacity: 1, y: 0 },
+                                                hidden: { opacity: 0, y: -10 }
+                                            }}
+                                            initial="hidden"
+                                            animate="visible"
+                                            transition={{
+                                                delay: 0.8,
+                                                transition: 0.28,
+                                            }}
+                                            src={image2}
                                             alt=""
-                                            className="w-full rounded-2xl hover:scale-105 transition duration-150 delay-150"
+                                            className="w-full rounded-2xl hover:scale-105"
                                         />
                                     </div>
                                 </div>
                                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                                    <div className="relative z-10 my-4">
+                                    <motion.div
+                                        variants={{
+                                            visible: { opacity: 1, x: 0 },
+                                            hidden: { opacity: 0, x: 10 }
+                                        }}
+                                        initial="hidden"
+                                        animate="visible"
+                                        transition={{
+                                            delay: 0.12,
+                                            transition: 0.30,
+                                        }}
+                                        className="relative z-10 my-4">
                                         <img
                                             src={image3}
                                             alt=""
-                                            className="w-full rounded-2xl hover:scale-105 transition duration-150 delay-150"
+                                            className="w-full rounded-2xl hover:scale-105"
                                         />
                                         <span className="absolute -right-7 -bottom-7 z-[-1]">
                                             <svg
@@ -602,7 +663,7 @@ export const About = () => {
                                                 />
                                             </svg>
                                         </span>
-                                    </div>
+                                    </motion.div>
                                 </div>
                             </div>
                         </div>
@@ -620,10 +681,22 @@ export const About = () => {
                                 <span className="block mb-4 text-lg uppercase font-bold  text-violet-700/70">
                                     Who are we?
                                 </span>
-                                <h2 className="mb-5 text-3xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-violet-500 to-teal-600 sm:text-[40px]/[48px]">
+                                <motion.h2
+                                    variants={{
+                                        visible: { opacity: 1, x: 0 },
+                                        hidden: { opacity: 0, x: 10 }
+                                    }}
+                                    initial="hidden"
+                                    animate="visible"
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.15
+                                    }}
+                                    className="mb-5 text-3xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-violet-500 to-teal-600 sm:text-[40px]/[48px]">
                                     Empowering Businesses with Smart Digital Solutions
-                                </h2>
-                                <p className="mb-5 text-base text-zinc-600 dark:text-dark-6">
+                                </motion.h2>
+                                <p
+                                    className="mb-5 text-base text-zinc-600 dark:text-dark-6">
                                     We help businesses scale by delivering cutting-edge digital solutions tailored to their needs. From seamless user experiences to data-driven strategies, we ensure your brand stays ahead in a competitive market.
                                 </p>
                                 <p className="mb-8 text-base text-zinc-600 dark:text-dark-6">
@@ -682,19 +755,126 @@ export const About = () => {
                     </div>
                 </div>
             </section>
-            <section className="h-screen w-full flex flex-col gap-2 items-center">
-                <h1>Where to find us</h1>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123504.21022902841!2d120.97978912938885!3d14.683921220660952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ba0942ef7375%3A0x4a9a32d9fe083d40!2sQuezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1741012668040!5m2!1sen!2sph"
-                    title="map"
-                    width="800"
-                    height="600"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                />
-            </section >
+            <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50 font-poppins">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.25 }}
+                            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">WHERE TO FIND US</motion.h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Visit our office in Quezon City, Metro Manila. We're conveniently located and ready to assist you.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div className="md:col-span-1 space-y-6">
+                            {/* Tabs */}
+                            <div className="w-full">
+                                <div className="w-full grid grid-cols-2 rounded-lg overflow-hidden border border-gray-200">
+                                    <button
+                                        onClick={() => setActiveTab("main")}
+                                        className={`py-2.5 text-sm font-medium transition-colors ${activeTab === "main" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                                            }`}
+                                    >
+                                        Main Office
+                                    </button>
+                                    <button
+                                        onClick={() => setActiveTab("branch")}
+                                        className={`py-2.5 text-sm font-medium transition-colors ${activeTab === "branch" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                                            }`}
+                                    >
+                                        Branch Office
+                                    </button>
+                                </div>
+
+                                {locations.map((location) => (
+                                    <div key={location.id} className={`space-y-6 ${activeTab === location.id ? "block" : "hidden"}`}>
+                                        <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+                                            <h3 className="text-xl font-semibold mb-4">{location.name}</h3>
+                                            <ul className="space-y-4">
+                                                <li className="flex items-start">
+                                                    <BiMap className="h-5 w-5 text-zinc-600 mr-3 mt-0.5 flex-shrink-0" />
+                                                    <span>{location.address}</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <BiPhone className="h-5 w-5 text-zinc-600 mr-3 mt-0.5 flex-shrink-0" />
+                                                    <span>{location.phone}</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <BsMailbox className="h-5 w-5 text-zinc-600 mr-3 mt-0.5 flex-shrink-0" />
+                                                    <span>{location.email}</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <CgLock className="h-5 w-5 text-blue-zinc mr-3 mt-0.5 flex-shrink-0" />
+                                                    <span>{location.hours}</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <BiNavigation className="h-5 w-5 text-zinc-600 mr-3 mt-0.5 flex-shrink-0" />
+                                                    <span>{location.coordinates}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="space-y-3">
+                                            <button
+                                                className="w-full bg-zinc-900 hover:bg-zinc-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors flex items-center justify-center"
+                                                onClick={() => setShowDirections(!showDirections)}
+                                            >
+                                                Get Directions
+                                                <BiChevronDown
+                                                    className={`ml-2 h-4 w-4 transition-transform ${showDirections ? "rotate-180" : ""}`}
+                                                />
+                                            </button>
+
+                                            <a
+                                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-full bg-white hover:bg-gray-50 text-gray-800 font-medium py-2.5 px-4 rounded-md border border-gray-300 transition-colors flex items-center justify-center"
+                                            >
+                                                Open in Google Maps
+                                                <FaExternalLinkAlt className="ml-2 h-4 w-4" />
+                                            </a>
+                                        </div>
+
+                                        {showDirections && (
+                                            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                                <h4 className="font-medium mb-2">Directions:</h4>
+                                                <ol className="list-decimal pl-5 space-y-2 text-sm">
+                                                    <li>Take the MRT to Quezon Avenue Station</li>
+                                                    <li>Exit towards the east side of EDSA</li>
+                                                    <li>Take a tricycle or walk approximately 10 minutes</li>
+                                                    <li>Look for our building with the company logo</li>
+                                                </ol>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="md:col-span-2 rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-white h-[600px]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123504.21022902841!2d120.97978912938885!3d14.683921220660952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ba0942ef7375%3A0x4a9a32d9fe083d40!2sQuezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1741012668040!5m2!1sen!2sph"
+                                className="w-full h-full"
+                                title="Our location in Quezon City, Metro Manila"
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="mt-12 text-center">
+                        <p className="text-gray-500 text-sm">
+                            Having trouble finding us? Call us at <span className="font-medium text-blue-600">+63 2 8123 4567</span> for
+                            assistance.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }
